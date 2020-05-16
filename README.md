@@ -1,5 +1,3 @@
-# Caching for performance with Amazon DocumentDB and Amazon ElastiCache
-
 # Solution overview
 This demo showcases how to integrate [Amazon DocumentDB (with MongoDB compatibility)](https://aws.amazon.com/documentdb/) and [Amazon ElastiCache](http://aws.amazon.com/elasticache) to achieve microsecond response times and reduce your overall cost. The following diagram shows the architecture of the demo app.
 
