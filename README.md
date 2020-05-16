@@ -1,4 +1,13 @@
-## Caching for performance with Amazon DocumentDB and Amazon ElastiCache
+# Caching for performance with Amazon DocumentDB and Amazon ElastiCache
+
+# Solution overview
+This demo showcases how to integrate [Amazon DocumentDB (with MongoDB compatibility)](https://aws.amazon.com/documentdb/) and [Amazon ElastiCache](http://aws.amazon.com/elasticache) to achieve microsecond response times and reduce your overall cost. The following diagram shows the architecture of the demo app.
+
+![alt text](img/architecture-diagram.png)
+
+The demo application allows users to find their favorite song. They submit the song title using a REST API client to the application engine. The application engine processes the API request by retrieving the document containing the singer’s name and lyrics of the requested song from the ElastiCache layer. If there has been a prior request for that song already, the read is served by ElastiCache to speed up the response time. If not, the application engine queries Amazon DocumentDB and returns the requested document to the client as a JSON document.
+
+In this demo, we use Amazon ElastiCache for Redis as the caching layer and a REST API client tool [Postman](https://www.getpostman.com/docs/) for testing our REST API requests.
 
 # Create an Amazon DocumentDB Cluster 
 
