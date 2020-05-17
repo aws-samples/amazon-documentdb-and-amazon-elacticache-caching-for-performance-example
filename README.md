@@ -9,7 +9,7 @@ In this demo, we use Amazon ElastiCache for Redis as the caching layer and a RES
 
 # Create an Amazon DocumentDB Cluster 
 
-We will use the AWS CLI to create our DocumentDB cluster instance. For more information about creating a cluster, see [Getting Started](https://docs.aws.amazon.com/documentdb/latest/developerguide/getting-started.html):
+We will use the [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) to create our DocumentDB cluster instance. For more information about creating a cluster, see [Getting Started](https://docs.aws.amazon.com/documentdb/latest/developerguide/getting-started.html):
 
 	aws docdb create-db-cluster --db-cluster-identifier docdb --engine docdb --master-username docdbadmin --master-user-password <########>
 
