@@ -1,7 +1,7 @@
 # Caching for performance with Amazon DocumentDB and Amazon ElastiCache
 
 # Overview
-In this demo, we showcase how to integrate [Amazon DocumentDB (with MongoDB compatibility)](https://aws.amazon.com/documentdb/) and [Amazon ElastiCache](http://aws.amazon.com/elasticache) to achieve microsecond response times. 
+In this demo, we showcase how to integrate [Amazon DocumentDB (with MongoDB compatibility)](https://aws.amazon.com/documentdb/) and [Amazon ElastiCache](http://aws.amazon.com/elasticache) to achieve microsecond response times.
 
 # Learning objectives
 In this demo, you will learn the following:
@@ -24,8 +24,7 @@ In this demo, we use Amazon ElastiCache for Redis as the caching layer and a RES
 
 # Create an EC2 instance
 
-We will host the song application on an Amazon EC2 instance.
-
+We will host the song application on an Amazon EC2 instance. First we need to start by creating the key pair for the EC2 which will be required to create the instance itself in step 2.
 
 1. [Create EC2 key pair](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/ec2/create-key-pair.html)
 
@@ -33,7 +32,7 @@ We will host the song application on an Amazon EC2 instance.
 
 2. [Create an EC2 instance](https://awscli.amazonaws.com/v2/documentation/api/latest/reference/opsworks/create-instance.html)
 
-		aws ec2 run-instances --image-id ami-067f5c3d5a99edc80 --key-name demo-instance-key --instance-type t2.micro --region us-west-2 --subnet-id subnet-86d697e0 --count 1 
+		aws ec2 run-instances --image-id ami-067f5c3d5a99edc80 --key-name demo-instance-key --instance-type t2.micro --region us-west-2 --subnet-id subnet-86d697e0 --count 1
 
 Verify that your instance has been launched successfully from the AWS console
 
@@ -74,7 +73,7 @@ Verify that you’re able to connect to the Amazon DocumentDB cluster from the E
 Next, verify that you’re able to connect to the Amazon ElastiCache cluster. To do that, install the Redis command line interface (CLI) using the following steps on the same EC2 instance hosting the song application:
 
 	sudo yum install gcc
-	wget http://download.redis.io/redis-stable.tar.gz 
+	wget http://download.redis.io/redis-stable.tar.gz
 	tar xvzf redis-stable.tar.gz
 	cd redis-stable
 	make
@@ -107,7 +106,7 @@ After Node.js is installed on the EC2 instance, check that Node Package Manager 
 	       __|  __|_  )
 	       _|  (     /   Amazon Linux 2 AMI
 	      ___|\___|___|
-	
+
 	https://aws.amazon.com/amazon-linux-2/
 	16 package(s) needed for security, out of 23 available
 	Run "sudo yum update" to apply all updates.
@@ -115,7 +114,7 @@ After Node.js is installed on the EC2 instance, check that Node Package Manager 
 	6.9.0
 	[ec2-user@ip-xx-xx-xx-xx ~]$ which node
 	~/.nvm/versions/node/v10.16.0/bin/node
-	[ec2-user@ip-172-31-34-254 ~]$ 
+	[ec2-user@ip-172-31-34-254 ~]$
 
 ## Create an application directory
 
@@ -170,7 +169,7 @@ SearchSongByTitle() is used by the /GET method to perform the actual search.
 Store the two functions in a file called cache.js. Create that file:
 
 	touch cache.js
-	
+
 Use your favorite editor (vim, vi, etc.) and copy the code from the file code/cache.js and paste into your file and save.
 
 ## Create the endpoint
@@ -200,4 +199,3 @@ In this demo, we demonstrated how to integrate Amazon DocumentDb with Amazon Ela
 # License
 
 This library is licensed under the MIT-0 License. See the LICENSE file.
-
