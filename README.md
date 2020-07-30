@@ -66,7 +66,7 @@ Verify that you’re able to connect to the Amazon DocumentDB cluster from the E
 	mongo --ssl --host docdb-2019-06-16-22-03-10.cluster-c9di9qmu8xqw.us-east-1.docdb.amazonaws.com:27017 --sslCAFile rds-combined-ca-bundle.pem --username docdbadmin --password <###########>
 	MongoDB shell version v3.6.13
 	connecting to: mongodb://docdb-2019-06-16-22-03-10.cluster-c9di9qmu8xqw.us-east-1.docdb.amazonaws.com:27017/?gssapiServiceName=mongodb
-	Implicit session: session { "id" : UUID("1fe7a152-8340-4d8e-b329-09c722b53b10") }
+	Implicit session: session { "id" : UUID("########################") }
 	MongoDB server version: 3.6.0
 	rs0:PRIMARY>
 
